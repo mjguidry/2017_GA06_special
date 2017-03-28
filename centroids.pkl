@@ -1,0 +1,2099 @@
+(dp0
+S'Fulton - JC13A'
+p1
+(lp2
+cnumpy.core.multiarray
+scalar
+p3
+(cnumpy
+dtype
+p4
+(S'f8'
+p5
+I0
+I1
+tp6
+Rp7
+(I3
+S'<'
+p8
+NNNI-1
+I-1
+I0
+tp9
+bS'Rd8\x1a\xe8\x0fU\xc0'
+p10
+tp11
+Rp12
+aF34.00427217465927
+asS'Fulton - JC13B'
+p13
+(lp14
+g3
+(g7
+S'\xc5\x02\xe3\xaf\xcf\x0eU\xc0'
+p15
+tp16
+Rp17
+aF34.00873034627449
+asS'DeKalb - Dunwoody'
+p18
+(lp19
+g3
+(g7
+S'\xb3\x13\xc6d\x9d\x15U\xc0'
+p20
+tp21
+Rp22
+aF33.935120034670966
+asS'Fulton - RW11A'
+p23
+(lp24
+g3
+(g7
+S'*\xa25\xaf\xe5\x17U\xc0'
+p25
+tp26
+Rp27
+aF34.003749891144075
+asS'DeKalb - Ashford Dunwoody Rd'
+p28
+(lp29
+g3
+(g7
+S'\x13\xa3\x8e\x91b\x15U\xc0'
+p30
+tp31
+Rp32
+aF33.88550756354322
+asS'DeKalb - Briarlake Elem'
+p33
+(lp34
+g3
+(g7
+S'\x8d8(\x9e\x1a\x11U\xc0'
+p35
+tp36
+Rp37
+aF33.8459653161265
+asS'Fulton - SS08D'
+p38
+(lp39
+g3
+(g7
+S'.%\xb9,\x9b\x16U\xc0'
+p40
+tp41
+Rp42
+aF33.92648389636372
+asS'Cobb - Sope Creek 02'
+p43
+(lp44
+g3
+(g7
+S'\x9e\xb0\xb2\xa3\xdd\x1cU\xc0'
+p45
+tp46
+Rp47
+aF33.9217722991492
+asS'Cobb - Sope Creek 03'
+p48
+(lp49
+g3
+(g7
+S'\x10\x9cx\x83\x83\x1bU\xc0'
+p50
+tp51
+Rp52
+aF33.933625738652935
+asS'Cobb - Sope Creek 01'
+p53
+(lp54
+g3
+(g7
+S'-~\xe3\x17\xdb\x1cU\xc0'
+p55
+tp56
+Rp57
+aF33.95661142736836
+asS'Cobb - Murdock 01'
+p58
+(lp59
+g3
+(g7
+S'\xd5\xf7\x98\xc6g\x1dU\xc0'
+p60
+tp61
+Rp62
+aF33.99901698327501
+asS'Fulton - RW06'
+p63
+(lp64
+g3
+(g7
+S'\xd9N\xa8>\x04\x13U\xc0'
+p65
+tp66
+Rp67
+aF34.018017307884904
+asS'Fulton - RW05'
+p68
+(lp69
+g3
+(g7
+S'\xeb\x9a\xee\xc1\xb6\x14U\xc0'
+p70
+tp71
+Rp72
+aF34.050837085873574
+asS'Cobb - Sewell Mill 01'
+p73
+(lp74
+g3
+(g7
+S'_\x1d\xa8YS\x1eU\xc0'
+p75
+tp76
+Rp77
+aF33.98648669731889
+asS'Fulton - RW03'
+p78
+(lp79
+g3
+(g7
+S'\xe4\xc8\xc0G\x17\x16U\xc0'
+p80
+tp81
+Rp82
+aF34.01924335254106
+asS'Fulton - RW02'
+p83
+(lp84
+g3
+(g7
+S'\x03uV\xf9\x96\x18U\xc0'
+p85
+tp86
+Rp87
+aF34.017555258356104
+asS'Fulton - RW01'
+p88
+(lp89
+g3
+(g7
+S'\x9a\xa2\xa9}\xf5\x18U\xc0'
+p90
+tp91
+Rp92
+aF34.04494643778876
+asS'Fulton - ML05B'
+p93
+(lp94
+g3
+(g7
+S'\x93<\xfb{\xe6\x11U\xc0'
+p95
+tp96
+Rp97
+aF34.14617677877653
+asS'Fulton - ML03'
+p98
+(lp99
+g3
+(g7
+S'\x9a\xc8\xa2\x1f\xe8\x13U\xc0'
+p100
+tp101
+Rp102
+aF34.14979915164411
+asS'Fulton - RW09'
+p103
+(lp104
+g3
+(g7
+S'\x0f\x91F\xa5f\x19U\xc0'
+p105
+tp106
+Rp107
+aF34.08676577171719
+asS'Fulton - RW08'
+p108
+(lp109
+g3
+(g7
+S'\x8f\x1c\xd9"\x90\x16U\xc0'
+p110
+tp111
+Rp112
+aF34.04095015429088
+asS'DeKalb - Midvale Elem'
+p113
+(lp114
+g3
+(g7
+S'se\x151\xa3\x0eU\xc0'
+p115
+tp116
+Rp117
+aF33.86293512154496
+asS'Fulton - SS08A'
+p118
+(lp119
+g3
+(g7
+S'\xb7\xc9z\xc7\xf7\x16U\xc0'
+p120
+tp121
+Rp122
+aF33.915413882922536
+asS'Fulton - RW22A'
+p123
+(lp124
+g3
+(g7
+S'\xf1\x96\xfb\xb4[\x12U\xc0'
+p125
+tp126
+Rp127
+aF34.0056127590213
+asS'DeKalb - Doraville North'
+p128
+(lp129
+g3
+(g7
+S'\x0c\x9e\xf82y\x11U\xc0'
+p130
+tp131
+Rp132
+aF33.911408286436604
+asS'Cobb - Garrison Mill 01'
+p133
+(lp134
+g3
+(g7
+S'&\x88\xa4\x94\x8a\x1cU\xc0'
+p135
+tp136
+Rp137
+aF34.04599515349085
+asS'Fulton - SS08B'
+p138
+(lp139
+g3
+(g7
+S'\x9cO!+?\x17U\xc0'
+p140
+tp141
+Rp142
+aF33.923810353614186
+asS'Fulton - JC09'
+p143
+(lp144
+g3
+(g7
+S'^W\xa7\x90\x83\rU\xc0'
+p145
+tp146
+Rp147
+aF34.0424057251493
+asS'Fulton - JC08'
+p148
+(lp149
+g3
+(g7
+S'-PPS!\rU\xc0'
+p150
+tp151
+Rp152
+aF34.052882721288036
+asS'Fulton - JC02'
+p153
+(lp154
+g3
+(g7
+S'\x13\xfc\x99\xa1\xa1\nU\xc0'
+p155
+tp156
+Rp157
+aF34.054193812173445
+asS'Fulton - JC01'
+p158
+(lp159
+g3
+(g7
+S'z\xd2\x0f\xb1\x14\tU\xc0'
+p160
+tp161
+Rp162
+aF34.04358815376846
+asS'Fulton - JC07'
+p163
+(lp164
+g3
+(g7
+S'P\x90\x16\nT\x0cU\xc0'
+p165
+tp166
+Rp167
+aF34.03774070522847
+asS'Fulton - JC06'
+p168
+(lp169
+g3
+(g7
+S'Mu\x91\x89}\x0bU\xc0'
+p170
+tp171
+Rp172
+aF34.02732141434368
+asS'Fulton - JC05'
+p173
+(lp174
+g3
+(g7
+S'\x80*]8\xdb\x0cU\xc0'
+p175
+tp176
+Rp177
+aF34.0620494310115
+asS'Fulton - RW10'
+p178
+(lp179
+g3
+(g7
+S'<\xc9\x80:3\x18U\xc0'
+p180
+tp181
+Rp182
+aF34.03395357578803
+asS'DeKalb - Georgetown Square'
+p183
+(lp184
+g3
+(g7
+S'\x9c\xc7\x9at7\x15U\xc0'
+p185
+tp186
+Rp187
+aF33.92594285829078
+asS'Fulton - RW12'
+p188
+(lp189
+g3
+(g7
+S'j\x1ft\x1f\xef\x16U\xc0'
+p190
+tp191
+Rp192
+aF34.06660671783984
+asS'Fulton - RW13'
+p193
+(lp194
+g3
+(g7
+S'N\xae>x\xed\x12U\xc0'
+p195
+tp196
+Rp197
+aF34.028759636992795
+asS'Fulton - ML04B'
+p198
+(lp199
+g3
+(g7
+S'\xe3\x93\x04\xf6\xca\x12U\xc0'
+p200
+tp201
+Rp202
+aF34.12810941981081
+asS'Fulton - ML04C'
+p203
+(lp204
+g3
+(g7
+S'7\xb4\xfa\xcb\xe8\x11U\xc0'
+p205
+tp206
+Rp207
+aF34.111105742090636
+asS'Fulton - RW16'
+p208
+(lp209
+g3
+(g7
+S'\xad\x974\xa7\x12\x16U\xc0'
+p210
+tp211
+Rp212
+aF34.055205083410186
+asS'Fulton - ML04A'
+p213
+(lp214
+g3
+(g7
+S'\xffj\xa1j&\x13U\xc0'
+p215
+tp216
+Rp217
+aF34.10461976351026
+asS'Fulton - RW19'
+p218
+(lp219
+g3
+(g7
+S'=,is\x83\x17U\xc0'
+p220
+tp221
+Rp222
+aF34.084164587587736
+asS'DeKalb - Winters Chapel'
+p223
+(lp224
+g3
+(g7
+S'%\xde\xfd\xa6\xb4\x11U\xc0'
+p225
+tp226
+Rp227
+aF33.94794080473137
+asS'Cobb - Addison 01'
+p228
+(lp229
+g3
+(g7
+S'\t\x9f\x8fl\x10 U\xc0'
+p230
+tp231
+Rp232
+aF34.02408355408694
+asS'Fulton - JC03A'
+p233
+(lp234
+g3
+(g7
+S'Mn\xfe\x17q\x0cU\xc0'
+p235
+tp236
+Rp237
+aF34.066230628710585
+asS'Fulton - JC03B'
+p238
+(lp239
+g3
+(g7
+S'\x07\x84f\xe6\xeb\x0bU\xc0'
+p240
+tp241
+Rp242
+aF34.06316012085575
+asS'DeKalb - Tucker Library'
+p243
+(lp244
+g3
+(g7
+S'\xdf\xdf7\x0f\xc2\rU\xc0'
+p245
+tp246
+Rp247
+aF33.85545844422311
+asS'DeKalb - Evansdale Elem'
+p248
+(lp249
+g3
+(g7
+S'\xf6F\x8c\x9c\xa8\x0fU\xc0'
+p250
+tp251
+Rp252
+aF33.88146681896646
+asS'Cobb - Elizabeth 02'
+p253
+(lp254
+g3
+(g7
+S'\xe9\x12\x90\xebm!U\xc0'
+p255
+tp256
+Rp257
+aF34.00596259164882
+asS'Cobb - Elizabeth 03'
+p258
+(lp259
+g3
+(g7
+S'\x90:\x03\xbc\x1c!U\xc0'
+p260
+tp261
+Rp262
+aF33.99162675367851
+asS'Cobb - East Piedmont 01'
+p263
+(lp264
+g3
+(g7
+S'\xf4+\xb1\xfd\x1a#U\xc0'
+p265
+tp266
+Rp267
+aF33.99272027132525
+asS'Cobb - Elizabeth 04'
+p268
+(lp269
+g3
+(g7
+S'\xab\xf1E\x97| U\xc0'
+p270
+tp271
+Rp272
+aF33.988270617811054
+asS'Cobb - Elizabeth 05'
+p273
+(lp274
+g3
+(g7
+S'\x97\xf67\xf8\xf2\x1eU\xc0'
+p275
+tp276
+Rp277
+aF34.00387025397339
+asS'DeKalb - Skyland'
+p278
+(lp279
+g3
+(g7
+S'\x15\xd2\xe9\x1c~\x14U\xc0'
+p280
+tp281
+Rp282
+aF33.85798883203417
+asS'Fulton - AP09B'
+p283
+(lp284
+g3
+(g7
+S'\\\xcbD\xd0\x11\rU\xc0'
+p285
+tp286
+Rp287
+aF34.081266817849276
+asS'Cobb - Nicholson 01'
+p288
+(lp289
+g3
+(g7
+S'\t\x8cL\xf6\x98 U\xc0'
+p290
+tp291
+Rp292
+aF34.0634408409768
+asS'DeKalb - Midvale Road'
+p293
+(lp294
+g3
+(g7
+S'8\xe7\x88\xb6\xce\x0fU\xc0'
+p295
+tp296
+Rp297
+aF33.86081110387227
+asS'Fulton - JC14'
+p298
+(lp299
+g3
+(g7
+S':i\x8b\xe6S\x0fU\xc0'
+p300
+tp301
+Rp302
+aF34.0254078678164
+asS'Fulton - JC15'
+p303
+(lp304
+g3
+(g7
+S'\xc9\x1aW\xd1V\x0fU\xc0'
+p305
+tp306
+Rp307
+aF34.046423596572964
+asS'Fulton - JC16'
+p308
+(lp309
+g3
+(g7
+S'\x14\x06\xb6u\xb2\x10U\xc0'
+p310
+tp311
+Rp312
+aF34.029382901102174
+asS'Fulton - JC10'
+p313
+(lp314
+g3
+(g7
+S'M\xcb/\x0cq\x0eU\xc0'
+p315
+tp316
+Rp317
+aF34.052379227348844
+asS'Cobb - Shallowford Fall 01'
+p318
+(lp319
+g3
+(g7
+S'\x92\xc9\x10 Q\x1bU\xc0'
+p320
+tp321
+Rp322
+aF34.03822228478867
+asS'Fulton - JC12'
+p323
+(lp324
+g3
+(g7
+S'\x99\xb5E\x83O\rU\xc0'
+p325
+tp326
+Rp327
+aF34.00834360476305
+asS'Fulton - SS29A'
+p328
+(lp329
+g3
+(g7
+S'\xa5\x02,\x07\x96\x16U\xc0'
+p330
+tp331
+Rp332
+aF33.945521826848676
+asS'Fulton - JC18'
+p333
+(lp334
+g3
+(g7
+S'\xa3\xc3\xbbcx\x11U\xc0'
+p335
+tp336
+Rp337
+aF34.01462313708983
+asS'Fulton - JC19'
+p338
+(lp339
+g3
+(g7
+S'\xecy\x16w\xda\x10U\xc0'
+p340
+tp341
+Rp342
+aF34.00510273394041
+asS'Fulton - SS19B'
+p343
+(lp344
+g3
+(g7
+S'\x12\x1a\xe6\x81\xf3\x17U\xc0'
+p345
+tp346
+Rp347
+aF33.962347126457864
+asS'Fulton - SS19A'
+p348
+(lp349
+g3
+(g7
+S'\xf0\x9b\xe4\xbfy\x17U\xc0'
+p350
+tp351
+Rp352
+aF33.97442687695088
+asS'DeKalb - Ashford Park Elem'
+p353
+(lp354
+g3
+(g7
+S'\xb4\xed*gi\x14U\xc0'
+p355
+tp356
+Rp357
+aF33.87037764678788
+asS'Fulton - SS11C'
+p358
+(lp359
+g3
+(g7
+S'&\x14\x0e>\x00\x18U\xc0'
+p360
+tp361
+Rp362
+aF33.91153686396142
+asS'Fulton - SS11B'
+p363
+(lp364
+g3
+(g7
+S'$\xc3\x1e\x18\x88\x18U\xc0'
+p365
+tp366
+Rp367
+aF33.90462214885319
+asS'Cobb - Mabry 01'
+p368
+(lp369
+g3
+(g7
+S'w\xb4\xe7\xe6\xbd\x1dU\xc0'
+p370
+tp371
+Rp372
+aF34.05393041070057
+asS'Cobb - Marietta 7a'
+p373
+(lp374
+g3
+(g7
+S'\x86\xcf\x01\xad\x19\x1eU\xc0'
+p375
+tp376
+Rp377
+aF33.92262422107677
+asS'DeKalb - Silver Lake'
+p378
+(lp379
+g3
+(g7
+S'.\xcc\xb5i\xb3\x15U\xc0'
+p380
+tp381
+Rp382
+aF33.87097336438361
+asS'Fulton - ML07A'
+p383
+(lp384
+g3
+(g7
+S'\xd3\xa0e\xd0\x18\x13U\xc0'
+p385
+tp386
+Rp387
+aF34.174295926832
+asS'Cobb - Dodgen 01'
+p388
+(lp389
+g3
+(g7
+S'\t3q\xdbE\x1cU\xc0'
+p390
+tp391
+Rp392
+aF33.98661903226402
+asS'Fulton - AP07B'
+p393
+(lp394
+g3
+(g7
+S'2\x9e\t}\xff\x11U\xc0'
+p395
+tp396
+Rp397
+aF34.11348073562003
+asS'Fulton - AP07A'
+p398
+(lp399
+g3
+(g7
+S'\xb9AX\xc3\xff\x11U\xc0'
+p400
+tp401
+Rp402
+aF34.08555779724032
+asS'Cobb - Sewell Mill 03'
+p403
+(lp404
+g3
+(g7
+S'\x05B\x03Y\xde\x1fU\xc0'
+p405
+tp406
+Rp407
+aF33.95725043317914
+asS'Fulton - ML072'
+p408
+(lp409
+g3
+(g7
+S'\x08(Kc8\x11U\xc0'
+p410
+tp411
+Rp412
+aF34.166820584745686
+asS'Fulton - ML071'
+p413
+(lp414
+g3
+(g7
+S'*\xc7\xa3\x8e,\x11U\xc0'
+p415
+tp416
+Rp417
+aF34.14411868763012
+asS'DeKalb - Oakcliff Elem'
+p418
+(lp419
+g3
+(g7
+S'\x8f\xa9f\xaf\xca\x10U\xc0'
+p420
+tp421
+Rp422
+aF33.89820898219719
+asS'Fulton - RW04'
+p423
+(lp424
+g3
+(g7
+S'"\xa2\x0b\x92\x18\x14U\xc0'
+p425
+tp426
+Rp427
+aF34.00012920108597
+asS'Cobb - Blackwell 01'
+p428
+(lp429
+g3
+(g7
+S'\xd0}\xf5\xeb\xcc!U\xc0'
+p430
+tp431
+Rp432
+aF34.043545296445984
+asS'Fulton - ML05A'
+p433
+(lp434
+g3
+(g7
+S'\x85s\xce\xe6\xdb\x11U\xc0'
+p435
+tp436
+Rp437
+aF34.100019528853935
+asS'Cobb - Eastside 01'
+p438
+(lp439
+g3
+(g7
+S'\xba\xc0\xeaZX\x1cU\xc0'
+p440
+tp441
+Rp442
+aF33.96723818662497
+asS'Cobb - Dickerson 01'
+p443
+(lp444
+g3
+(g7
+S'a\x93\x8e\x10\xc0\x1aU\xc0'
+p445
+tp446
+Rp447
+aF33.97890270784593
+asS'Fulton - ML06A'
+p448
+(lp449
+g3
+(g7
+S'\x9b\x88&Q\xe4\x10U\xc0'
+p450
+tp451
+Rp452
+aF34.096990223029785
+asS'Fulton - ML06B'
+p453
+(lp454
+g3
+(g7
+S'\x08g\x0cL\xcb\x10U\xc0'
+p455
+tp456
+Rp457
+aF34.11379077534359
+asS'Cobb - Bells Ferry 02'
+p458
+(lp459
+g3
+(g7
+S'\xb6\xd6\xcc\x8e\x85"U\xc0'
+p460
+tp461
+Rp462
+aF34.02760365351056
+asS'Cobb - Bells Ferry 03'
+p463
+(lp464
+g3
+(g7
+S'\t\x8c\xb9\xbe\xc4"U\xc0'
+p465
+tp466
+Rp467
+aF34.06430428470234
+asS'DeKalb - Dresden Elem'
+p468
+(lp469
+g3
+(g7
+S'\xee\xc9\x95\x8ec\x13U\xc0'
+p470
+tp471
+Rp472
+aF33.86144520612662
+asS'DeKalb - Livsey Elem'
+p473
+(lp474
+g3
+(g7
+S'A\x02\xa9\xc0n\x0eU\xc0'
+p475
+tp476
+Rp477
+aF33.876357627812894
+asS'Fulton - SS18A'
+p478
+(lp479
+g3
+(g7
+S'\xf29l\xc48\x19U\xc0'
+p480
+tp481
+Rp482
+aF33.946963127012545
+asS'Fulton - SS18B'
+p483
+(lp484
+g3
+(g7
+S'{\x00\x18d"\x19U\xc0'
+p485
+tp486
+Rp487
+aF33.95189868069281
+asS'Cobb - Chestnut Ridge 01'
+p488
+(lp489
+g3
+(g7
+S'\xfe=\\k\x13\x1cU\xc0'
+p490
+tp491
+Rp492
+aF34.00921115457352
+asS'DeKalb - Kingsley Elem'
+p493
+(lp494
+g3
+(g7
+S'C\x93\x0eM\xc0\x12U\xc0'
+p495
+tp496
+Rp497
+aF33.951244155600655
+asS'Cobb - Marietta 6b'
+p498
+(lp499
+g3
+(g7
+S'\xab\xf1E\x97| U\xc0'
+p500
+tp501
+Rp502
+aF33.988270617811054
+asS'Cobb - Marietta 6a'
+p503
+(lp504
+g3
+(g7
+S'\xb8\x18\xec6Z\x1eU\xc0'
+p505
+tp506
+Rp507
+aF33.92961868131067
+asS'DeKalb - Pleasantdale Elem'
+p508
+(lp509
+g3
+(g7
+S'=\x803\xd0\xf5\x0eU\xc0'
+p510
+tp511
+Rp512
+aF33.89302285849031
+asS'Fulton - AP12A'
+p513
+(lp514
+g3
+(g7
+S'\x0b\xda\xe7my\x10U\xc0'
+p515
+tp516
+Rp517
+aF34.06997057238153
+asS'DeKalb - Peachtree Middle'
+p518
+(lp519
+g3
+(g7
+S'\xff\x10\xa2t\x89\x13U\xc0'
+p520
+tp521
+Rp522
+aF33.92813505427586
+asS'DeKalb - Cross Keys High'
+p523
+(lp524
+g3
+(g7
+S':\x04\xf1\x99\xc0\x15U\xc0'
+p525
+tp526
+Rp527
+aF33.84539489613146
+asS'Cobb - Palmer 01'
+p528
+(lp529
+g3
+(g7
+S'\xfbgw\x03h#U\xc0'
+p530
+tp531
+Rp532
+aF34.051117815471024
+asS'DeKalb - Doraville South'
+p533
+(lp534
+g3
+(g7
+S'\xdc\x86~\xbf\xaa\x11U\xc0'
+p535
+tp536
+Rp537
+aF33.89209523596557
+asS'Fulton - SS11A'
+p538
+(lp539
+g3
+(g7
+S'r\x85\x8c8\xd4\x17U\xc0'
+p540
+tp541
+Rp542
+aF33.90226264845395
+asS'DeKalb - Chamblee'
+p543
+(lp544
+g3
+(g7
+S'\x923\xb5\x1fi\x13U\xc0'
+p545
+tp546
+Rp547
+aF33.8925462823805
+asS'DeKalb - Tucker'
+p548
+(lp549
+g3
+(g7
+S'?qM\xc9:\rU\xc0'
+p550
+tp551
+Rp552
+aF33.86732069804683
+asS'Fulton - AP02B'
+p553
+(lp554
+g3
+(g7
+S'\xd3\x01\xd5,\xe5\x13U\xc0'
+p555
+tp556
+Rp557
+aF34.048322677115955
+asS'Cobb - Hightower 01'
+p558
+(lp559
+g3
+(g7
+S'1\x8d\xb2\xd2\xd4\x1bU\xc0'
+p560
+tp561
+Rp562
+aF34.0208458714882
+asS'Cobb - Sandy Plains 01'
+p563
+(lp564
+g3
+(g7
+S'\x0egcp.\x1eU\xc0'
+p565
+tp566
+Rp567
+aF34.0197898102849
+asS'DeKalb - Mt. Vernon West'
+p568
+(lp569
+g3
+(g7
+S'\x9ar\xd6\xee\xd4\x14U\xc0'
+p570
+tp571
+Rp572
+aF33.942331584982455
+asS'Cobb - Fullers Park 01'
+p573
+(lp574
+g3
+(g7
+S'Rf\xce\xb3F\x1dU\xc0'
+p575
+tp576
+Rp577
+aF33.97230836546146
+asS'Cobb - Wileo 01'
+p578
+(lp579
+g3
+(g7
+S'D+\xe7\x19\x12\x1bU\xc0'
+p580
+tp581
+Rp582
+aF34.05209828193263
+asS'Cobb - Davis 01'
+p583
+(lp584
+g3
+(g7
+S'mc\xferM\x1eU\xc0'
+p585
+tp586
+Rp587
+aF34.06814933509374
+asS'DeKalb - Warren Tech'
+p588
+(lp589
+g3
+(g7
+S'bWr\x848\x11U\xc0'
+p590
+tp591
+Rp592
+aF33.879626591873524
+asS'DeKalb - Briarwood'
+p593
+(lp594
+g3
+(g7
+S'z\xe8F\x1e7\x15U\xc0'
+p595
+tp596
+Rp597
+aF33.85006322926018
+asS'Fulton - SS31'
+p598
+(lp599
+g3
+(g7
+S'\xa7F\x8f"\xc3\x18U\xc0'
+p600
+tp601
+Rp602
+aF33.91722089137607
+asS'DeKalb - Montgomery Elem'
+p603
+(lp604
+g3
+(g7
+S'\xd8\x1d\xf2aR\x15U\xc0'
+p605
+tp606
+Rp607
+aF33.9122125927764
+asS'DeKalb - Brookhaven'
+p608
+(lp609
+g3
+(g7
+S"\xe4'\x9b\xd4h\x15U\xc0"
+p610
+tp611
+Rp612
+aF33.862029487026604
+asS'Fulton - JC04A'
+p613
+(lp614
+g3
+(g7
+S'\xb1\xc1A\xdc}\x0cU\xc0'
+p615
+tp616
+Rp617
+aF34.07791158520452
+asS'Fulton - JC04B'
+p618
+(lp619
+g3
+(g7
+S'\xdba@8\x81\rU\xc0'
+p620
+tp621
+Rp622
+aF34.068531179245575
+asS'Fulton - ML01B'
+p623
+(lp624
+g3
+(g7
+S'V\x1fO|\xb4\x18U\xc0'
+p625
+tp626
+Rp627
+aF34.11182979234534
+asS'Cobb - Marietta 5b'
+p628
+(lp629
+g3
+(g7
+S'\xf4+\xb1\xfd\x1a#U\xc0'
+p630
+tp631
+Rp632
+aF33.99272027132525
+asS'Cobb - Marietta 5a'
+p633
+(lp634
+g3
+(g7
+S'\t\xf1g6\x99 U\xc0'
+p635
+tp636
+Rp637
+aF33.95782476836492
+asS'Fulton - AP01A'
+p638
+(lp639
+g3
+(g7
+S'\xabP\xa0\x80\xca\x10U\xc0'
+p640
+tp641
+Rp642
+aF34.05494443236711
+asS'Fulton - AP01C'
+p643
+(lp644
+g3
+(g7
+S'\xe5\xc3\xe7\x86\x03\x11U\xc0'
+p645
+tp646
+Rp647
+aF34.04010859543158
+asS'Fulton - AP01B'
+p648
+(lp649
+g3
+(g7
+S'M\xb5\xeeM%\x12U\xc0'
+p650
+tp651
+Rp652
+aF34.064135956264224
+asS'DeKalb - Lakeside High'
+p653
+(lp654
+g3
+(g7
+S'\xf3\xb2\xa3p\x1f\x12U\xc0'
+p655
+tp656
+Rp657
+aF33.8457072336699
+asS'Fulton - AP01D'
+p658
+(lp659
+g3
+(g7
+S'\x04\xbc\x885\xd2\x12U\xc0'
+p660
+tp661
+Rp662
+aF34.040934846132316
+asS'DeKalb - Austin'
+p663
+(lp664
+g3
+(g7
+S'=\xe9\xaaxk\x15U\xc0'
+p665
+tp666
+Rp667
+aF33.96192946894058
+asS'Fulton - ML011'
+p668
+(lp669
+g3
+(g7
+S'Hd@H\xcb\x15U\xc0'
+p670
+tp671
+Rp672
+aF34.088432588979586
+asS'DeKalb - Tilly Mill Road'
+p673
+(lp674
+g3
+(g7
+S'\xa6{\xf5\x93\xb3\x12U\xc0'
+p675
+tp676
+Rp677
+aF33.93743889188289
+asS'Fulton - AP03'
+p678
+(lp679
+g3
+(g7
+S'=\xdc0\x94\xd6\x14U\xc0'
+p680
+tp681
+Rp682
+aF34.03936739892832
+asS'Fulton - ML012'
+p683
+(lp684
+g3
+(g7
+S'rbX\xca\x9c\x16U\xc0'
+p685
+tp686
+Rp687
+aF34.087269055928985
+asS'Fulton - AP05'
+p688
+(lp689
+g3
+(g7
+S'\x9c\xaer\xa8o\x0eU\xc0'
+p690
+tp691
+Rp692
+aF34.08451455825366
+asS'Fulton - SS02B'
+p693
+(lp694
+g3
+(g7
+S'm\xbaJ\xcb/\x18U\xc0'
+p695
+tp696
+Rp697
+aF33.94607886257631
+asS'Fulton - AP06'
+p698
+(lp699
+g3
+(g7
+S'`!\xc6v\x81\x14U\xc0'
+p700
+tp701
+Rp702
+aF34.08915776636336
+asS'Cobb - Powers Ferry 01'
+p703
+(lp704
+g3
+(g7
+S'HO?\x15\xe0\x1fU\xc0'
+p705
+tp706
+Rp707
+aF33.941443480280725
+asS'Cobb - Mount Bethel 03'
+p708
+(lp709
+g3
+(g7
+S'\xe8]#\xb4\xe8\x19U\xc0'
+p710
+tp711
+Rp712
+aF33.958777354740405
+asS'Cobb - Mount Bethel 01'
+p713
+(lp714
+g3
+(g7
+S'\xd1\xd0b\x87_\x19U\xc0'
+p715
+tp716
+Rp717
+aF33.975920425185805
+asS'Cobb - Mount Bethel 04'
+p718
+(lp719
+g3
+(g7
+S'C\n\xd1\xb1\x99\x1bU\xc0'
+p720
+tp721
+Rp722
+aF33.95076566526924
+asS'DeKalb - Kittredge Elem'
+p723
+(lp724
+g3
+(g7
+S'\xb0\xca\xa0\x19r\x14U\xc0'
+p725
+tp726
+Rp727
+aF33.90643721204365
+asS'DeKalb - Huntley Hills Elem'
+p728
+(lp729
+g3
+(g7
+S'\x07\x08=\xa3X\x13U\xc0'
+p730
+tp731
+Rp732
+aF33.9142914008333
+asS'Fulton - AP14'
+p733
+(lp734
+g3
+(g7
+S'\xc9\x1aW\xd1V\x0fU\xc0'
+p735
+tp736
+Rp737
+aF34.046423596572964
+asS'Fulton - AP09A'
+p738
+(lp739
+g3
+(g7
+S'\x16"z6\x9c\x0eU\xc0'
+p740
+tp741
+Rp742
+aF34.069647605925
+asS'Fulton - SS02A'
+p743
+(lp744
+g3
+(g7
+S'\xc6\xfcs*\x15\x18U\xc0'
+p745
+tp746
+Rp747
+aF33.95184752430476
+asS'Cobb - Gritters 01'
+p748
+(lp749
+g3
+(g7
+S'N\x04\xf8\x01\xda U\xc0'
+p750
+tp751
+Rp752
+aF34.02006841520271
+asS'Fulton - AP021'
+p753
+(lp754
+g3
+(g7
+S'\xb36h_\n\x14U\xc0'
+p755
+tp756
+Rp757
+aF34.07928972880382
+asS'Fulton - AP022'
+p758
+(lp759
+g3
+(g7
+S'f\xa0^\xaa\xad\x13U\xc0'
+p760
+tp761
+Rp762
+aF34.062802193941806
+asS'Fulton - SS26'
+p763
+(lp764
+g3
+(g7
+S'a\xd1`B\xe3\x16U\xc0'
+p765
+tp766
+Rp767
+aF33.96472539615695
+asS'Fulton - JC11'
+p768
+(lp769
+g3
+(g7
+S'V\xca\x84\x06\x7f\rU\xc0'
+p770
+tp771
+Rp772
+aF34.025502941835306
+asS'Fulton - SS25'
+p773
+(lp774
+g3
+(g7
+S'\x0f86\x9a\xa4\x11U\xc0'
+p775
+tp776
+Rp777
+aF33.97006945621906
+asS'Fulton - SS22'
+p778
+(lp779
+g3
+(g7
+S'f\xe3\xd4\xbcm\x17U\xc0'
+p780
+tp781
+Rp782
+aF33.98928270842732
+asS'Fulton - SS20'
+p783
+(lp784
+g3
+(g7
+S'ND\xd8;A\x16U\xc0'
+p785
+tp786
+Rp787
+aF33.97298519415515
+asS'Cobb - Chattahoochee 01'
+p788
+(lp789
+g3
+(g7
+S'\xc2N\x94\xaaG\x1dU\xc0'
+p790
+tp791
+Rp792
+aF33.89851299975591
+asS'Fulton - SS07A'
+p793
+(lp794
+g3
+(g7
+S'\x9cO\xe3D\xe0\x17U\xc0'
+p795
+tp796
+Rp797
+aF33.93107726940012
+asS'Fulton - SS07B'
+p798
+(lp799
+g3
+(g7
+S'Y\x1b\xc8\xbf\xcc\x17U\xc0'
+p800
+tp801
+Rp802
+aF33.92245798387937
+asS'Fulton - SS07C'
+p803
+(lp804
+g3
+(g7
+S'\xad)\x9a\x10\xd2\x17U\xc0'
+p805
+tp806
+Rp807
+aF33.91509973804688
+asS'Fulton - ML024'
+p808
+(lp809
+g3
+(g7
+S'\xf3v\x1dp\xe6\x13U\xc0'
+p810
+tp811
+Rp812
+aF34.12087942636753
+asS'Fulton - AP12C'
+p813
+(lp814
+g3
+(g7
+S'\xcb\xe3\xf4c\x06\x12U\xc0'
+p815
+tp816
+Rp817
+aF34.07252785411939
+asS'Fulton - AP12B'
+p818
+(lp819
+g3
+(g7
+S'x\xaa\xef(\xf1\x0fU\xc0'
+p820
+tp821
+Rp822
+aF34.08621895715131
+asS'DeKalb - Chesnut Elem'
+p823
+(lp824
+g3
+(g7
+S'XG\xb6\x1c\xbb\x12U\xc0'
+p825
+tp826
+Rp827
+aF33.924086133541
+asS'Fulton - ML021'
+p828
+(lp829
+g3
+(g7
+S'\xa4\xf9P5\xe3\x15U\xc0'
+p830
+tp831
+Rp832
+aF34.15231406819897
+asS'Fulton - ML022'
+p833
+(lp834
+g3
+(g7
+S'\xf8Zr\x02\x98\x15U\xc0'
+p835
+tp836
+Rp837
+aF34.13584014231325
+asS'Fulton - ML023'
+p838
+(lp839
+g3
+(g7
+S'\xf3\x86Z0\x9e\x15U\xc0'
+p840
+tp841
+Rp842
+aF34.11583697636334
+asS'Fulton - RW07A'
+p843
+(lp844
+g3
+(g7
+S'\xa5:k\xb0\xc6\x14U\xc0'
+p845
+tp846
+Rp847
+aF34.02813342903172
+asS'Fulton - AP13'
+p848
+(lp849
+g3
+(g7
+S'G\xd9\x89W0\x10U\xc0'
+p850
+tp851
+Rp852
+aF34.052386594375356
+asS'Fulton - AP10'
+p853
+(lp854
+g3
+(g7
+S'D\x1b\x13\xdbO\x13U\xc0'
+p855
+tp856
+Rp857
+aF34.09069595816906
+asS'Fulton - RW07B'
+p858
+(lp859
+g3
+(g7
+S'+\x04"\xcb\xcd\x14U\xc0'
+p860
+tp861
+Rp862
+aF34.03268712506814
+asS'Fulton - AP04B'
+p863
+(lp864
+g3
+(g7
+S'Hd@H\xcb\x15U\xc0'
+p865
+tp866
+Rp867
+aF34.088432588979586
+asS'Cobb - Mccleskey 01'
+p868
+(lp869
+g3
+(g7
+S'\x1c\x11\xf81\x99 U\xc0'
+p870
+tp871
+Rp872
+aF34.0478504680004
+asS'Fulton - AP04A'
+p873
+(lp874
+g3
+(g7
+S'\x17G}\x9c\n\x16U\xc0'
+p875
+tp876
+Rp877
+aF34.08026372482934
+asS'DeKalb - Dunwoody Library'
+p878
+(lp879
+g3
+(g7
+S'\xc3\xbc\xa8\x8d\x9e\x15U\xc0'
+p880
+tp881
+Rp882
+aF33.949392185233386
+asS'Cobb - Roswell 01'
+p883
+(lp884
+g3
+(g7
+S'\xf2e1V.\x1aU\xc0'
+p885
+tp886
+Rp887
+aF34.016672812037356
+asS'Cobb - Roswell 02'
+p888
+(lp889
+g3
+(g7
+S'\xb7\x82\xc4\x0bc\x1bU\xc0'
+p890
+tp891
+Rp892
+aF33.99608642600916
+asS'DeKalb - Ashford Parkside'
+p893
+(lp894
+g3
+(g7
+S'a6\xc4M[\x15U\xc0'
+p895
+tp896
+Rp897
+aF33.896373522211405
+asS'DeKalb - Mt. Vernon East'
+p898
+(lp899
+g3
+(g7
+S'(\x81\x83\x0c\x1b\x14U\xc0'
+p900
+tp901
+Rp902
+aF33.95820138222896
+asS'DeKalb - Embry Hills'
+p903
+(lp904
+g3
+(g7
+S've\xda\xb6\x17\x0fU\xc0'
+p905
+tp906
+Rp907
+aF33.88551364030826
+asS'Cobb - Lasssiter 01'
+p908
+(lp909
+g3
+(g7
+S'\r"\x9b\x82\xef\x1dU\xc0'
+p910
+tp911
+Rp912
+aF34.045844756077024
+asS'Fulton - RW21'
+p913
+(lp914
+g3
+(g7
+S'\xc38y#\x0c\x12U\xc0'
+p915
+tp916
+Rp917
+aF33.98519767491449
+asS'Fulton - RW20'
+p918
+(lp919
+g3
+(g7
+S'\xf0\xbd\xbfRr\x13U\xc0'
+p920
+tp921
+Rp922
+aF33.99375297663045
+asS'Fulton - SS12'
+p923
+(lp924
+g3
+(g7
+S'\xa4I\x158\xf4\x16U\xc0'
+p925
+tp926
+Rp927
+aF33.89808792274616
+asS'DeKalb - Henderson Mill Elem'
+p928
+(lp929
+g3
+(g7
+S'\xe0TXm\xc0\x10U\xc0'
+p930
+tp931
+Rp932
+aF33.86551196815605
+asS'Fulton - SS17'
+p933
+(lp934
+g3
+(g7
+S'4\xbdp\x14\xb5\x14U\xc0'
+p935
+tp936
+Rp937
+aF33.98095444208675
+asS'Fulton - SS16'
+p938
+(lp939
+g3
+(g7
+S'\xa9{\xcd+\x19\x1bU\xc0'
+p940
+tp941
+Rp942
+aF33.92047460219607
+asS'Fulton - SS08C'
+p943
+(lp944
+g3
+(g7
+S'I:\xa5\x0b;\x17U\xc0'
+p945
+tp946
+Rp947
+aF33.93161850444574
+asS'Cobb - Post Oak 01'
+p948
+(lp949
+g3
+(g7
+S'\x93\x13\xabbY\x1cU\xc0'
+p950
+tp951
+Rp952
+aF34.064284960492174
+asS'Cobb - Pope 01'
+p953
+(lp954
+g3
+(g7
+S'Im;\x8d\x14\x1dU\xc0'
+p955
+tp956
+Rp957
+aF34.028325031542
+asS'Fulton - SS15B'
+p958
+(lp959
+g3
+(g7
+S'r\xce\xc2y\xd4\x15U\xc0'
+p960
+tp961
+Rp962
+aF34.00172458605987
+asS'Fulton - SS15A'
+p963
+(lp964
+g3
+(g7
+S'\xe0\xc0\x9a^\x11\x16U\xc0'
+p965
+tp966
+Rp967
+aF33.99267018722259
+asS'DeKalb - North Peachtree'
+p968
+(lp969
+g3
+(g7
+S'\xebI\xd8\x0b\xaf\x11U\xc0'
+p970
+tp971
+Rp972
+aF33.93404588777125
+asS'Cobb - Rocky Mountain 01'
+p973
+(lp974
+g3
+(g7
+S'\xae\x80\x9c:$\x1fU\xc0'
+p975
+tp976
+Rp977
+aF34.05127064762986
+asS'Fulton - ML05C'
+p978
+(lp979
+g3
+(g7
+S'\x1a\xd4\xe1\x95F\x11U\xc0'
+p980
+tp981
+Rp982
+aF34.121130496690725
+asS'Fulton - MP01'
+p983
+(lp984
+g3
+(g7
+S'=\xd6\x80\xb5g\x1aU\xc0'
+p985
+tp986
+Rp987
+aF34.08280741789271
+asS'Cobb - Timber Ridge 01'
+p988
+(lp989
+g3
+(g7
+S'\xd7\x95\xbb\xb6Y\x19U\xc0'
+p990
+tp991
+Rp992
+aF33.9921874370998
+asS'DeKalb - Dunwoody High'
+p993
+(lp994
+g3
+(g7
+S'\xf8-\x16\xce\xd0\x13U\xc0'
+p995
+tp996
+Rp997
+aF33.94168170241337
+asS'Cobb - Kell 01'
+p998
+(lp999
+g3
+(g7
+S'\xb9?\xe4/\xa1\x1fU\xc0'
+p1000
+tp1001
+Rp1002
+aF34.06884694653977
+asS'Fulton - RW17'
+p1003
+(lp1004
+g3
+(g7
+S'M\xb3\xc9\xff\x8b\x14U\xc0'
+p1005
+tp1006
+Rp1007
+aF34.01135641074012
+asS'Fulton - SS04'
+p1008
+(lp1009
+g3
+(g7
+S'\xf9\x1c\xa5`Z\x17U\xc0'
+p1010
+tp1011
+Rp1012
+aF33.94390163642873
+asS'Fulton - SS05'
+p1013
+(lp1014
+g3
+(g7
+S'\x8ap\xa9\xd9\x90\x19U\xc0'
+p1015
+tp1016
+Rp1017
+aF33.93581399766035
+asS'Fulton - SS06'
+p1018
+(lp1019
+g3
+(g7
+S'\xa4\xed\x0c\xcfE\x19U\xc0'
+p1020
+tp1021
+Rp1022
+aF33.92463825084142
+asS'Fulton - SS01'
+p1023
+(lp1024
+g3
+(g7
+S'\xc1\xf5/\xd8\xdc\x12U\xc0'
+p1025
+tp1026
+Rp1027
+aF33.972725309525565
+asS'Fulton - SS03'
+p1028
+(lp1029
+g3
+(g7
+S'\xc1\xb8\xb4\xee}\x18U\xc0'
+p1030
+tp1031
+Rp1032
+aF33.93669551254185
+asS'Cobb - Eastside 02'
+p1033
+(lp1034
+g3
+(g7
+S'\x99;o\xc3\x1a\x1eU\xc0'
+p1035
+tp1036
+Rp1037
+aF33.94972699935225
+asS'DeKalb - Hawthorne Elem'
+p1038
+(lp1039
+g3
+(g7
+S'\xf9\xdbE/\xfc\x11U\xc0'
+p1040
+tp1041
+Rp1042
+aF33.863309628343615
+asS'Cobb - Simpson 01'
+p1043
+(lp1044
+g3
+(g7
+S'{\xf5\xde\x19z\x1eU\xc0'
+p1045
+tp1046
+Rp1047
+aF34.033099031614746
+as.
