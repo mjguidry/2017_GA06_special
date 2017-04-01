@@ -12,6 +12,8 @@ import string
 from scipy.spatial import ConvexHull
 import numpy as np
 import pickle
+import os.path
+from openpyxl import load_workbook, Workbook
 
 def area_for_polygon(polygon):
     result = 0
@@ -56,14 +58,17 @@ maxy=0
 minx=1e30
 miny=1e30
 centroids=dict()
+precincts=dict()
 for info, shape in zip(m.GA06_info, m.GA06):
     county=info['County_12']
     precinct=info['Precinct_1']
-    if(county=='Fulton'):
-        precinct=string.upper(precinct)
-    else:
-        precinct=string.capwords(precinct)
-    name=county+' - '+precinct
+#    if(county=='Fulton'):
+#        precinct=string.upper(precinct)
+#    else:
+#        precinct=string.capwords(precinct)
+#    name=county+' - '+precinct
+    name=precinct
+    precincts[precinct]=county
     x, y = zip(*shape)
     hull=ConvexHull(shape)
     centroid=centroid_for_polygon(np.array(shape)[hull.vertices])
@@ -85,3 +90,24 @@ print m(minx, miny,inverse=True)
 f=open('centroids.pkl','wb')
 pickle.dump(centroids,f)
 f.close()
+
+if(os.path.exists('GA06_blocks.xlsx')):
+    wb=load_workbook('GA06_blocks.xlsx')
+else:
+    wb=Workbook()
+sheets=wb.get_sheet_names()
+if('Precincts' in sheets):
+    ws=wb.get_sheet_by_name('Precincts')
+else:
+    ws=wb.create_sheet('Precincts')
+
+counties=sorted(set(precincts.values()))
+row=2
+for county in counties:
+    keys=sorted([precinct for precinct in precincts.keys() if precincts[precinct]==county])
+    for key in keys:
+        ws.cell(row=row,column=6).value=county
+        ws.cell(row=row,column=7).value=key
+        row=row+1
+
+wb.save('GA06_blocks.xlsx')
