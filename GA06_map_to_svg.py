@@ -21,7 +21,7 @@ joinCells=True
 im_file=temp_dir+'/tmp.png'
 
 # This is the output PNG file, which will be in black and white
-save_file=temp_dir+'/tmp_BW.png'
+save_file='GA06_BW.png'
 
 # This is the SVG file
 svg_file=r'GA06.svg'
@@ -163,7 +163,11 @@ gray = cv2.imread(save_file,0)
 
 ret,thresh = cv2.threshold(gray,127,255,1)
 
-image, contours, h = cv2.findContours(thresh,1,2)
+try:
+    image, contours, h = cv2.findContours(thresh,1,2)
+except:
+    contours, h = cv2.findContours(thresh,1,2)
+    
 print 'Number of paths is'+'\t'+str(len(contours))
 if(addText):
     contour_dict=dict()    
