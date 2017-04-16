@@ -18,10 +18,11 @@ input_csv_def=os.path.expanduser("~/Desktop/Sample GA06.csv")
 r_vs_d_png_def=os.path.expanduser("~/Desktop/GA06_R_vs_D.png")
 all_cands_png_def=os.path.expanduser("~/Desktop/GA06_all_cands.png")
 all_R_cands_png_def=os.path.expanduser("~/Desktop/GA06_R_cands.png")
+ossoff_50_png_def=os.path.expanduser("~/Desktop/GA06_ossoff_50.png")
 
 qt_app = QApplication(sys.argv)
 
-def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png):
+def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png,ossoff_50_png):
     
     #Candidate profiles
     candidates={}
@@ -86,19 +87,26 @@ def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png):
     img_all=im.copy() # Top individual vote getters
     img_rvd=im.copy() # Total R vs Total D
     img_gop=im.copy() # Top R vote getter
+    img_ossoff=im.copy() # Ossoff at 50%
     
     mode="RGB"
     #img=img.convert(mode)
     red=ImageColor.getcolor('red',mode)
     blue=ImageColor.getcolor('blue',mode)
     gray=ImageColor.getcolor('gray',mode)
+    not_ossoff=ImageColor.getcolor('#ff8d4d',mode)
     for precinct in votes_dict:
+        all_votes=sum([votes_dict[precinct][candidate] for candidate in votes_dict[precinct]])
         Ds=sum([votes_dict[precinct][candidate] for candidate in votes_dict[precinct] if candidates[candidate]['party']=='D'])
         Rs=sum([votes_dict[precinct][candidate] for candidate in votes_dict[precinct] if candidates[candidate]['party']=='R'])
         best=[candidate for candidate in votes_dict[precinct] if votes_dict[precinct][candidate]==max(votes_dict[precinct].values())]
         most_R_votes=max([votes_dict[precinct][candidate] for candidate in votes_dict[precinct] if candidates[candidate]['party']=='R'])
         best_R=[candidate for candidate in votes_dict[precinct] if candidates[candidate]['party']=='R' and votes_dict[precinct][candidate]==most_R_votes]
-    
+        if('OSSOFF' in votes_dict[precinct]):
+            ossoff_votes=votes_dict[precinct]['OSSOFF']
+        else:
+            ossoff_votes=0
+            
         # Color R vs D map, check for ties
         if(Rs>Ds):
             ImageDraw.floodfill(img_rvd,(precinct_xy[precinct][0],precinct_xy[precinct][1]),red)
@@ -122,14 +130,24 @@ def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png):
             ImageDraw.floodfill(img_gop,(precinct_xy[precinct][0],precinct_xy[precinct][1]),color)
         elif(len(best_R)>1 and votes_dict[precinct][best_R[0]]>0):
             ImageDraw.floodfill(img_gop,(precinct_xy[precinct][0],precinct_xy[precinct][1]),gray)
+
+        # Color map indicating if Ossoff has reached 50%
+        if(all_votes>0):
+            if((float(ossoff_votes)/all_votes)>0.5):
+                color=ImageColor.getcolor(candidates['OSSOFF']['color'],mode)
+                ImageDraw.floodfill(img_ossoff,(precinct_xy[precinct][0],precinct_xy[precinct][1]),color)
+            else:
+                ImageDraw.floodfill(img_ossoff,(precinct_xy[precinct][0],precinct_xy[precinct][1]),not_ossoff)
     
     img_rvd.save(r_vs_d_png)
     img_all.save(all_cands_png)
     img_gop.save(all_R_cands_png)
+    img_ossoff.save(ossoff_50_png)
     
     img_rvd.close()
     img_all.close()
     img_gop.close()
+    img_ossoff.close()
     
 class LayoutExample(QWidget):
     ''' An example of PySide/PyQt absolute positioning; the main window
@@ -188,8 +206,16 @@ class LayoutExample(QWidget):
  
         # Add it to the form layout with a label
         self.form_layout.addRow('Output R-only candidates PNG:', self.all_R_cands)
+
+        # Create the entry control to specify an only R candidates PNG
+        # and set its placeholder text
+        self.ossoff_50 = QLineEdit(self)
+        self.ossoff_50.setPlaceholderText('PNG file')
+        self.ossoff_50.setText(ossoff_50_png_def)
  
- 
+        # Add it to the form layout with a label
+        self.form_layout.addRow('Output Ossoff at 50% PNG:', self.ossoff_50)
+  
         # Add the form layout to the main VBox layout
         self.layout.addLayout(self.form_layout)
  
@@ -223,6 +249,7 @@ class LayoutExample(QWidget):
         r_vs_d_png=str(self.r_vs_d.text())
         all_cands_png=str(self.all_cands.text())
         all_R_cands_png=str(self.all_R_cands.text())
+        ossoff_50_png=str(self.ossoff_50.text())
         if(not os.path.isfile(input_csv)):
             self.error_message=QErrorMessage()
             self.error_message.setWindowTitle('File not found!')
@@ -230,7 +257,7 @@ class LayoutExample(QWidget):
             self.error_message.showMessage('File '+input_csv+' not found!')
         else:
 #            try:
-            self.color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png)
+            self.color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png,ossoff_50_png)
 #            except:
 #                self.error_message=QErrorMessage()
 #                self.error_message.setWindowTitle('Error!')
