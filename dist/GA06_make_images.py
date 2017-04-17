@@ -26,19 +26,19 @@ def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png,ossoff_50_png)
     
     #Candidate profiles
     candidates={}
-    candidates['OSSOFF']    ={'color':'#0072b2','party':'D'}
+    candidates['OSSOFF']    ={'color':'#0000ff','party':'D'}
     candidates['EDWARDS']   ={'color':'','party':'D'}
     candidates['QUIGG']     ={'color':'','party':'D'}
     candidates['KEATLEY']   ={'color':'','party':'D'}
     candidates['SLOTIN']    ={'color':'','party':'D'}
     
     candidates['KREMER']    ={'color':'','party':'R'}
-    candidates['GRAY']      ={'color':'#e69f00','party':'R'}
+    candidates['GRAY']      ={'color':'#ffff00','party':'R'}
     candidates['LEVELL']    ={'color':'','party':'R'}
-    candidates['MOODY']     ={'color':'#f0e442','party':'R'}
+    candidates['MOODY']     ={'color':'#cc00ff','party':'R'}
     candidates['ABROMS']    ={'color':'','party':'R'}
-    candidates['HILL']      ={'color':'#009e73','party':'R'}
-    candidates['HANDEL']    ={'color':'#cc79a7','party':'R'}
+    candidates['HILL']      ={'color':'#00ff00','party':'R'}
+    candidates['HANDEL']    ={'color':'#ff0000','party':'R'}
     candidates['GRAWERT']   ={'color':'','party':'R'}
     candidates['WILSON']    ={'color':'','party':'R'}
     candidates['BHUIYAN']   ={'color':'','party':'R'}
@@ -46,10 +46,16 @@ def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png,ossoff_50_png)
     
     candidates['HERNANDEZ'] ={'color':'','party':'I'}
     candidates['POLLARD']   ={'color':'','party':'I'}
+    candidates['WRITE IN']   ={'color':'','party':'I'}
     
     for candidate in candidates:
         if(candidates[candidate]['color']==''):
-            candidates[candidate]['color']='gray'
+            if(candidates[candidate]['party']=='D'):
+                candidates[candidate]['color']='#00e6ff'
+            elif(candidates[candidate]['party']=='R'):
+                candidates[candidate]['color']='#ff00e6'
+            else:
+                candidates[candidate]['color']='#ff9900'
     
     # Grab coordinates for each precinct
     precinct_xy=dict()
@@ -77,10 +83,15 @@ def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png,ossoff_50_png)
         cname=row[cand_col]
         candidate=[c for c in candidates if c in cname.upper()][0]
         precinct=row[prec_col]
+        precinct=re.sub('\s+$','',precinct)
         votes=int(row[votes_col])
-        if(precinct not in votes_dict):
-            votes_dict[precinct]=dict()
-        votes_dict[precinct][candidate]=votes
+        if(precinct!='Marietta 5B'):
+            if(precinct not in votes_dict):
+                votes_dict[precinct]=dict()
+            if(candidate not in votes_dict[precinct]):
+                votes_dict[precinct][candidate]=votes
+            else:
+                votes_dict[precinct][candidate]=votes_dict[precinct][candidate]+votes
     
     im = Image.open("./data_files/GA06_BW.png")
     
