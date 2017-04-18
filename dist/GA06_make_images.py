@@ -26,19 +26,19 @@ def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png,ossoff_50_png)
     
     #Candidate profiles
     candidates={}
-    candidates['OSSOFF']    ={'color':'#0000ff','party':'D'}
+    candidates['OSSOFF']    ={'color':['#9999ff','#0000ff','#0000dd','#000099'],'party':'D'}
     candidates['EDWARDS']   ={'color':'','party':'D'}
     candidates['QUIGG']     ={'color':'','party':'D'}
     candidates['KEATLEY']   ={'color':'','party':'D'}
     candidates['SLOTIN']    ={'color':'','party':'D'}
     
     candidates['KREMER']    ={'color':'','party':'R'}
-    candidates['GRAY']      ={'color':'#ffff00','party':'R'}
+    candidates['GRAY']      ={'color':['#ffff99','#ffff00','#dddd00','#999900'],'party':'R'}
     candidates['LEVELL']    ={'color':'','party':'R'}
-    candidates['MOODY']     ={'color':'#cc00ff','party':'R'}
+    candidates['MOODY']     ={'color':['#eb99ff','#cc00ff','#b000dd','#7a0099'],'party':'R'}
     candidates['ABROMS']    ={'color':'','party':'R'}
-    candidates['HILL']      ={'color':'#00ff00','party':'R'}
-    candidates['HANDEL']    ={'color':'#ff0000','party':'R'}
+    candidates['HILL']      ={'color':['#99ff99','#00ff00','#00dd00','#009900'],'party':'R'}
+    candidates['HANDEL']    ={'color':['#ff9999','#ff0000','#dd0000','#990000'],'party':'R'}
     candidates['GRAWERT']   ={'color':'','party':'R'}
     candidates['WILSON']    ={'color':'','party':'R'}
     candidates['BHUIYAN']   ={'color':'','party':'R'}
@@ -51,11 +51,11 @@ def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png,ossoff_50_png)
     for candidate in candidates:
         if(candidates[candidate]['color']==''):
             if(candidates[candidate]['party']=='D'):
-                candidates[candidate]['color']='#00e6ff'
+                candidates[candidate]['color']=['#99f4ff','#00e6ff','#00c7dd','#008a99']
             elif(candidates[candidate]['party']=='R'):
-                candidates[candidate]['color']='#ff00e6'
+                candidates[candidate]['color']=['#ff99f4','#ff00e6','#dd00c7','#99008a']
             else:
-                candidates[candidate]['color']='#ff9900'
+                candidates[candidate]['color']=['#ffd799','#ff9900','#dd8500','#995b00']
     
     # Grab coordinates for each precinct
     precinct_xy=dict()
@@ -110,9 +110,12 @@ def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png,ossoff_50_png)
         all_votes=sum([votes_dict[precinct][candidate] for candidate in votes_dict[precinct]])
         Ds=sum([votes_dict[precinct][candidate] for candidate in votes_dict[precinct] if candidates[candidate]['party']=='D'])
         Rs=sum([votes_dict[precinct][candidate] for candidate in votes_dict[precinct] if candidates[candidate]['party']=='R'])
-        best=[candidate for candidate in votes_dict[precinct] if votes_dict[precinct][candidate]==max(votes_dict[precinct].values())]
-        most_R_votes=max([votes_dict[precinct][candidate] for candidate in votes_dict[precinct] if candidates[candidate]['party']=='R'])
-        best_R=[candidate for candidate in votes_dict[precinct] if candidates[candidate]['party']=='R' and votes_dict[precinct][candidate]==most_R_votes]
+        order=sorted(votes_dict[precinct],key=votes_dict[precinct].get,reverse=True)
+        R_order=[cand for cand in order if candidates[cand]['party']=='R']
+        best=order[0]
+        next_best=order[1]
+        best_R=R_order[0]
+        next_best_R=R_order[1]
         if('OSSOFF' in votes_dict[precinct]):
             ossoff_votes=votes_dict[precinct]['OSSOFF']
         else:
@@ -120,32 +123,68 @@ def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png,ossoff_50_png)
             
         # Color R vs D map, check for ties
         if(Rs>Ds):
-            ImageDraw.floodfill(img_rvd,(precinct_xy[precinct][0],precinct_xy[precinct][1]),red)
+            R_margin=float(Rs-Ds)/all_votes
+            if(R_margin>0.2):
+                color=ImageColor.getcolor('#990000',mode)
+            elif(R_margin>0.1):
+                color=ImageColor.getcolor('#dd0000',mode)
+            elif(R_margin>0.05):
+                color=ImageColor.getcolor('#ff0000',mode)
+            else:
+                color=ImageColor.getcolor('#ff9999',mode)            
+            ImageDraw.floodfill(img_rvd,(precinct_xy[precinct][0],precinct_xy[precinct][1]),color)
         elif(Ds>Rs):
-            ImageDraw.floodfill(img_rvd,(precinct_xy[precinct][0],precinct_xy[precinct][1]),blue)
+            D_margin=float(Ds-Rs)/all_votes
+            if(D_margin>0.2):
+                color=ImageColor.getcolor('#000099',mode)
+            elif(D_margin>0.1):
+                color=ImageColor.getcolor('#0000dd',mode)
+            elif(D_margin>0.05):
+                color=ImageColor.getcolor('#0000ff',mode)
+            else:
+                color=ImageColor.getcolor('#9999ff',mode)            
+            ImageDraw.floodfill(img_rvd,(precinct_xy[precinct][0],precinct_xy[precinct][1]),color)
         elif(Ds>0 and Rs>0):
             ImageDraw.floodfill(img_rvd,(precinct_xy[precinct][0],precinct_xy[precinct][1]),gray)
     
         # Color all candidates map, check if only one top votegetter, otherwise a tie
-        if(len(best)==1):
-            candidate=best[0]
-            color=ImageColor.getcolor(candidates[candidate]['color'],mode)
+        best_votes=votes_dict[precinct][best]
+        next_best_votes=votes_dict[precinct][next_best]
+        best_margin=float(best_votes-next_best_votes)/all_votes
+        if(best_margin>0.2):
+            color=ImageColor.getcolor(candidates[best]['color'][3],mode)
+        elif(best_margin>0.1):
+            color=ImageColor.getcolor(candidates[best]['color'][2],mode)
+        elif(best_margin>0.05):
+            color=ImageColor.getcolor(candidates[best]['color'][1],mode)
+        elif(best_margin>0.):
+            color=ImageColor.getcolor(candidates[best]['color'][0],mode)
+        elif(best_votes>0):
+            color=gray
+        if(best_votes>0):
             ImageDraw.floodfill(img_all,(precinct_xy[precinct][0],precinct_xy[precinct][1]),color)
-        elif(len(best)>1 and votes_dict[precinct][best[0]]>0):
-            ImageDraw.floodfill(img_all,(precinct_xy[precinct][0],precinct_xy[precinct][1]),gray)
     
         # Color all R candidates map, check if only one top R votegetter, otherwise a tie
-        if(len(best_R)==1):
-            candidate=best_R[0]
-            color=ImageColor.getcolor(candidates[candidate]['color'],mode)
+        best_R_votes=votes_dict[precinct][best_R]
+        next_best_R_votes=votes_dict[precinct][next_best_R]
+        best_R_margin=float(best_R_votes-next_best_R_votes)/all_votes
+        if(best_R_margin>0.2):
+            color=ImageColor.getcolor(candidates[best_R]['color'][3],mode)
+        elif(best_R_margin>0.1):
+            color=ImageColor.getcolor(candidates[best_R]['color'][2],mode)
+        elif(best_R_margin>0.05):
+            color=ImageColor.getcolor(candidates[best_R]['color'][1],mode)
+        elif(best_R_margin>0.):
+            color=ImageColor.getcolor(candidates[best_R]['color'][0],mode)
+        elif(best_R_votes>0):
+            color=gray
+        if(best_R_votes>0):
             ImageDraw.floodfill(img_gop,(precinct_xy[precinct][0],precinct_xy[precinct][1]),color)
-        elif(len(best_R)>1 and votes_dict[precinct][best_R[0]]>0):
-            ImageDraw.floodfill(img_gop,(precinct_xy[precinct][0],precinct_xy[precinct][1]),gray)
 
         # Color map indicating if Ossoff has reached 50%
         if(all_votes>0):
             if((float(ossoff_votes)/all_votes)>0.5):
-                color=ImageColor.getcolor(candidates['OSSOFF']['color'],mode)
+                color=ImageColor.getcolor(candidates['OSSOFF']['color'][1],mode)
                 ImageDraw.floodfill(img_ossoff,(precinct_xy[precinct][0],precinct_xy[precinct][1]),color)
             else:
                 ImageDraw.floodfill(img_ossoff,(precinct_xy[precinct][0],precinct_xy[precinct][1]),not_ossoff)
