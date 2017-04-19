@@ -76,9 +76,12 @@ def color_maps(input_csv,r_vs_d_png,all_cands_png,all_R_cands_png,ossoff_50_png)
     votes_file=open(input_csv,'rb')
     reader=csv.reader(votes_file)
     headers = reader.next()
-    cand_col=[i for i,x in enumerate(headers) if 'CandidateName' in x][0]
-    prec_col=[i for i,x in enumerate(headers) if 'PrecinctName' in x][0]
-    votes_col=[i for i,x in enumerate(headers) if 'Votes' in x][0]
+    #cand_col=[i for i,x in enumerate(headers) if 'CandidateName' in x][0]
+    #prec_col=[i for i,x in enumerate(headers) if 'PrecinctName' in x][0]
+    #votes_col=[i for i,x in enumerate(headers) if 'Votes' in x][0]
+    cand_col=5
+    prec_col=4
+    votes_col=7
     for row in reader:
         cname=row[cand_col]
         candidate=[c for c in candidates if c in cname.upper()][0]
