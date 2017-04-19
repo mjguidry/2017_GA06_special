@@ -31,13 +31,18 @@ for f in xml_files:
                 votes=int(precinct.attrib['votes'])
                 name=precinct.attrib['name']
                 name = re.sub(r'\s+$', '', name)
+                name = re.sub('Wileo','Willeo',name)
+                name = re.sub('Lasssiter','Lassiter',name)
+                name = re.sub('Fall ','Falls ',name)
+                name = re.sub('Rocky Mountain','Rocky Mount',name)
+                name = re.sub('PLEASANTDALE ELEM','PLEASANTDALE ROAD',name)
                 if(name not in precinct_dict):
                     precinct_dict[name]=dict()
                 if(choice_name not in precinct_dict[name]):
                     precinct_dict[name][choice_name]=0
                 precinct_dict[name][choice_name]=precinct_dict[name][choice_name]+votes
 
-precincts=dict()
+precinct_xy=dict()
 maxx=0
 maxy=0
 with open('GA06.csv','rb') as csvfile:
@@ -52,7 +57,7 @@ with open('GA06.csv','rb') as csvfile:
         ys=nums[1::2]
         maxx=max(maxx,max(xs))
         maxy=max(maxy,max(ys))
-        precincts[row[0]]=int(nums[0]+0.5),int(nums[1]+0.5)
+        precinct_xy[row[0]]=int(nums[0]+0.5),int(nums[1]+0.5)
 
 im = Image.open("GA06_BW.png")
 im2=im.copy()
@@ -60,13 +65,38 @@ mode="RGB"
 img=im2.convert(mode)
 red=ImageColor.getcolor('red',mode)
 blue=ImageColor.getcolor('blue',mode)
-for precinct in precincts:
-    gop_key=[key for key in precinct_dict[precinct] if 'PRICE' in key][0]
-    dem_key=[key for key in precinct_dict[precinct] if 'STOOKSBURY' in key][0]
-    if(precinct_dict[precinct][gop_key]>precinct_dict[precinct][dem_key]):
-        ImageDraw.floodfill(img,(precincts[precinct][0],precincts[precinct][1]),red)
-    else:
-        ImageDraw.floodfill(img,(precincts[precinct][0],precincts[precinct][1]),blue)
+gray=ImageColor.getcolor('gray',mode)
+for precinct in precinct_dict:
+    if(precinct in precinct_xy):
+        gop_key=[key for key in precinct_dict[precinct] if 'PRICE' in key][0]
+        dem_key=[key for key in precinct_dict[precinct] if 'STOOKSBURY' in key][0]
+        R=precinct_dict[precinct][gop_key]
+        D=precinct_dict[precinct][dem_key]
+        total=sum([precinct_dict[precinct][cand] for cand in precinct_dict[precinct]])
+        if(R>D):
+            R_margin=float(R-D)/total
+            if(R_margin>0.2):
+                color=ImageColor.getcolor('#990000',mode)
+            elif(R_margin>0.1):
+                color=ImageColor.getcolor('#dd0000',mode)
+            elif(R_margin>0.05):
+                color=ImageColor.getcolor('#ff0000',mode)
+            else:
+                color=ImageColor.getcolor('#ff9999',mode)            
+            ImageDraw.floodfill(img,(precinct_xy[precinct][0],precinct_xy[precinct][1]),color)
+        elif(D>R):
+            D_margin=float(D-R)/total
+            if(D_margin>0.2):
+                color=ImageColor.getcolor('#000099',mode)
+            elif(D_margin>0.1):
+                color=ImageColor.getcolor('#0000dd',mode)
+            elif(D_margin>0.05):
+                color=ImageColor.getcolor('#0000ff',mode)
+            else:
+                color=ImageColor.getcolor('#9999ff',mode)            
+            ImageDraw.floodfill(img,(precinct_xy[precinct][0],precinct_xy[precinct][1]),color)
+        elif(D>0 and R>0):
+            ImageDraw.floodfill(img,(precinct_xy[precinct][0],precinct_xy[precinct][1]),gray)
 
 img.show()
 img.save("GA06_2016_house.png")
