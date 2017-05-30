@@ -22,7 +22,7 @@ setup(
     options={
         "py2exe":{
             "includes":"PIL,PyQt4,sip",
-            "dist_dir": "C:\Users\MGUIDRY\Documents\GitHub\2017_GA06_special\GA06_make_images_runoff",
+            "dist_dir": r"C:\Users\MGUIDRY\Documents\GitHub\2017_GA06_special\GA06_make_images_runoff",
             "dll_excludes": ["MSVCP90.dll"],
             "unbuffered":True,
             "optimize":2}}

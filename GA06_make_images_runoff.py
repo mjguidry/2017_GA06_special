@@ -5,7 +5,7 @@ Created on Wed Apr 12 21:24:05 2017
 @author: mike
 """
 import csv, re
-from PIL import Image,ImageColor, ImageDraw
+from PIL import Image,ImageColor, ImageDraw, ImageFont
 import sys, os
 from PyQt4.QtCore import pyqtSlot
 from PyQt4.QtGui import *
@@ -104,6 +104,10 @@ def color_maps(input_csv,output_png):
                 votes_dict[precinct][candidate]=votes
             else:
                 votes_dict[precinct][candidate]=votes_dict[precinct][candidate]+votes
+
+    precincts_reporting=len([precinct for precinct in votes_dict if sum(votes_dict[precinct].values())>0])
+    precincts=len(votes_dict)
+
     
     im = Image.open("./data_files/GA06_BW_runoff.png")
     xsize=im.size[0]
@@ -116,7 +120,7 @@ def color_maps(input_csv,output_png):
     mode="RGB"
     #img=img.convert(mode)
     red=ImageColor.getcolor('red',mode)
-    blue=ImageColor.getcolor('blue',mode)
+    black=ImageColor.getcolor('black',mode)
     gray=ImageColor.getcolor('gray',mode)
 
     for precinct in votes_dict:
@@ -249,13 +253,13 @@ def color_maps(input_csv,output_png):
     title="2017 GA-06 Special Election Runoff"
     draw.text((xc-64*len(title)/4+174, 10),title,black,font=font)    
     
-    draw.text((xc-xsize/2+10+0*xsize/16, yt+ysize/2-ysize/4),"1",black,font=font)
-    draw.text(( 0+10+0*xsize/16, yb+ysize/2-ysize/4),"2",black,font=font)
-    draw.text((xc+10+0*xsize/16, yb+ysize/2-ysize/4),"3",black,font=font)
+    draw.text((xc-xsize/2+10+0*xsize/16, yt+ysize/2-2.5*48),"1",black,font=font)
+    draw.text(( 0+10+0*xsize/16, yb+ysize/2-2.5*48),"2",black,font=font)
+    draw.text((xc+10+0*xsize/16, yb+ysize/2-2.5*48),"3",black,font=font)
     
     draw.text((xc-xsize/2+10, yt+ysize/2-ysize/8),"Results",black,font=font_sm)
-    draw.text((0+10, yb+ysize/2-ysize/8),"vs 2017 Primary",black,font=font_sm)
-    draw.text((xc+10, yb+ysize/2-ysize/8),"vs 2016 House",black,font=font_sm)
+    draw.text((0+10, yb+ysize/2-ysize/8),"vs 2017 April Primary",black,font=font_sm)
+    draw.text((xc+10, yb+ysize/2-ysize/8),"vs 2016 Presidential",black,font=font_sm)
     
     margins=['> 0%','> 5%','>10%','>15%','>20%','>30%','>40%','>50%']
     for k in range(8):
@@ -264,13 +268,13 @@ def color_maps(input_csv,output_png):
         draw.text((xr-4*50+50*k,yc-50),margins[k],black,font=font_half)
     
     for k,cand in enumerate(order):
-        draw.text((xl-125,yc-50+25*k),cand+' ('+candidates[cand]['party']+')',candidates[cand]['color'][3],font=font_half)
+        draw.text((xl-125,yc-25+25*k),cand+' ('+candidates[cand]['party']+')',candidates[cand]['color'][3],font=font_half)
         if(all_votes>0):
-            draw.text((xl,yc-50+25*k),'%5s' % str(100*round(float(all_votes_dict[cand])/all_votes,3))+'%',black,font=font_half)
+            draw.text((xl,yc-25+25*k),'%5s' % str(100*round(float(all_votes_dict[cand])/all_votes,3))+'%',black,font=font_half)
         else:
-            draw.text((xl,yc-50+25*k),'%5s' % str(0.0)+'%',black,font=font_half)
+            draw.text((xl,yc-25+25*k),'%5s' % str(0.0)+'%',black,font=font_half)
             
-#    draw.text((xc-90,986-38),str(precincts_reporting)+'/'+str(precincts)+' precincts reporting',black,font=font_half)    
+    draw.text((xc-90,4*58+2*ysize-38),str(precincts_reporting)+'/'+str(precincts)+' precincts reporting',black,font=font_half)    
     
     img_combine.save(output_png)
 
