@@ -39,11 +39,11 @@ import os, re
 import csv
 
 #Dimensions, in pixels
-xw=12
-yw=12
+xw=8
+yw=8
 
 #Offset for extending counties
-offset_val=12
+offset_val=16
 
 precinct_dict=dict()
 wb_blocks=load_workbook(filename='GA06_blocks.xlsx')
