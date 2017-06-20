@@ -21,7 +21,7 @@ import argparse
 flags = argparse.ArgumentParser(parents=[tools.argparser]).parse_args()
 
 now=datetime.datetime.now()
-polls_close=datetime.datetime(year=2017,month=6,day=20,hour=19)
+polls_close=datetime.datetime(year=2017,month=6,day=20,hour=16)
 if(now<polls_close):
     sample_only=True
 else:
@@ -29,7 +29,10 @@ else:
 
 SCOPES = ['https://www.googleapis.com/auth/drive',
           'https://www.googleapis.com/auth/spreadsheets']
-CLIENT_SECRET_FILE = '/home/mike/Downloads/client_id.json'
+if(os.name=='posix'):
+    CLIENT_SECRET_FILE = '/home/mike/Downloads/client_id.json'
+elif(os.name=='nt'):
+    CLIENT_SECRET_FILE = r'C:\Users\MGUIDRY\workspace\dd\client_id.json'
 APPLICATION_NAME = 'Map Drawing Script'
 SCRIPT_ID = 'MUVhXLGI6BP6BWWA2rZWczzimZkoIcWwo'
 
@@ -327,8 +330,8 @@ img_combine.paste(img_all,(xc-xsize/2,yt-ysize/2,xsize+(xc-xsize/2),ysize+(yt-ys
 img_combine.paste(img_comp_primary,(xl-xsize/2,yb-ysize/2,xsize+(xl-xsize/2),ysize+(yb-ysize/2)))
 img_combine.paste(img_comp_pres,(xr-xsize/2,yb-ysize/2,xsize+(xr-xsize/2),ysize+(yb-ysize/2)))
 ddhq_size=img_ddhq.size
-img_ddhq=img_ddhq.resize((48,48))
-img_combine.paste(img_ddhq,(0+10,0+10,48+10,48+10))
+img_ddhq_sm=img_ddhq.resize((48,48))
+img_combine.paste(img_ddhq_sm,(0+10,0+10,48+10,48+10))
 
 draw = ImageDraw.Draw(img_combine)
 #font = ImageFont.truetype("FRAHVIT.TTF", 48)
@@ -337,10 +340,10 @@ if(os.name=='nt'):
     font_sm = ImageFont.truetype("micross.ttf", 24)
     font_half = ImageFont.truetype("micross.ttf", 16)
 elif(os.name=='posix'):
-    font_dir='/usr/share/fonts/truetype/ubuntu-font-family/'
-    font = ImageFont.truetype(font_dir+"Ubuntu-R.ttf", 48)
-    font_sm = ImageFont.truetype(font_dir+"Ubuntu-R.ttf", 24)
-    font_half = ImageFont.truetype(font_dir+"Ubuntu-R.ttf", 16)
+    font_dir='/usr/share/fonts/opentype/freefont/'
+    font = ImageFont.truetype(font_dir+"FreeSans.otf", 48)
+    font_sm = ImageFont.truetype(font_dir+"FreeSans.otf", 24)
+    font_half = ImageFont.truetype(font_dir+"FreeSans.otf", 16)
     
 
 # Title
@@ -370,12 +373,12 @@ for k,cand in enumerate(order):
         
 draw.text((xc-90,4*58+2*ysize-38),str(precincts_reporting)+'/'+str(precincts)+' precincts reporting',black,font=font_half)    
 
-output_png='GA06_runoff_combine.png'
+
 img_combine.save(os.path.expanduser("~/Desktop/")+file_names[0])
 
 
 #Individuals
-
+img_ddhq=img_ddhq.resize((80,80))
 ratio=max([float(xsize)/(1920-2*100),float(ysize)/(1080-2*100)])
 if(sample_only):
     sample_text="SAMPLE"
@@ -387,8 +390,8 @@ if(sample_only):
         if(os.name=='nt'):
             font_sample = ImageFont.truetype("micross.ttf", font_sample_size)
         elif(os.name=='posix'):
-            font_dir='/usr/share/fonts/truetype/ubuntu-font-family/'
-            font_sample = ImageFont.truetype(font_dir+"Ubuntu-R.ttf", font_sample_size)
+            font_dir='/usr/share/fonts/opentype/freefont/'
+            font_sample = ImageFont.truetype(font_dir+"FreeSans.otf", font_sample_size)
         textwidth, textheight = draw_sample.textsize(sample_text, font_sample)
         if(textwidth>120):
             font_too_big=True
@@ -415,28 +418,31 @@ title_1=titles[0]+', as of '+datetime.datetime.now().strftime("%I:%M%p, %B %d")
 textwidth, textheight = draw_1.textsize(title_1,font=font_sm)
 draw_1.text((xc-textwidth/2, 10+58),title_1,black,font=font_sm)
 for k,cand in enumerate(order):
-    draw_1.text((58,1080-10-25*4+25*k),cand,candidates[cand]['color'][3],font=font_half)
+    draw_1.text((58,1080-10-25*4+25*k),cand,candidates[cand]['color'][3],font=font_sm)
     if(all_votes>0):
-        draw_1.text((58+80,1080-10-25*4+25*k),'%5s' % str(100*round(float(all_votes_dict[cand])/all_votes,3))+'%',black,font=font_half)
+        draw_1.text((58+118,1080-10-25*4+25*k),'%5s' % str(100*round(float(all_votes_dict[cand])/all_votes,3))+'%',black,font=font_sm)
     else:
-        draw_1.text((58+80,1080-10-25*4+25*k),'%5s' % str(0.0)+'%',black,font=font_half)    
+        draw_1.text((58+118,1080-10-25*4+25*k),'%5s' % str(0.0)+'%',black,font=font_sm)    
     results_str='%12s' % "{:,}".format(all_votes_dict[cand])
     if(k!=0):
         results_str=results_str+'  (-%s)' % "{:,}".format(all_votes_dict[order[0]]-all_votes_dict[cand])
-    draw_1.text((58+140,1080-10-25*4+25*k),results_str,black,font=font_half)
-draw_1.text((58,1080-10-25),'Total votes',black,font=font_half)
-draw_1.text((58+140,1080-10-25),'%12s' % "{:,}".format(all_votes),black,font=font_half)
+    draw_1.text((58+178,1080-10-25*4+25*k),results_str,black,font=font_sm)
+draw_1.text((58,1080-10-25),'Total votes',black,font=font_sm)
+draw_1.text((58+178,1080-10-25),'%12s' % "{:,}".format(all_votes),black,font=font_sm)
 for l,cand in enumerate(['OSSOFF','HANDEL']):
     for k in range(8):
-        draw_1.rectangle((1920-10-50*8+50*k,1080-10-25*2+25*l,1920-10-50*8+50*(k+1),1080-10-25*2+25*(l+1)),fill=candidates[cand]['color'][k],outline=black)
+        draw_1.rectangle((1920-10-70*8+70*k,1080-10-25*2+25*l,1920-10-70*8+70*(k+1),1080-10-25*2+25*(l+1)),fill=candidates[cand]['color'][k],outline=black)
         if(l==0):
-            draw_1.text((1920-10-50*8+50*k,1080-10-25*3),margins[k],black,font=font_half)
-    textwidth, textheight = draw_1.textsize(cand, font_half)
-    draw_1.text((1920-10-50*8-10-textwidth,1080-10-25*2+25*l),cand,black,font=font_half)    
-img_all_i.paste(img_ddhq,(0+10,0+10,48+10,48+10))
+            draw_1.text((1920-10-70*8+70*k,1080-10-25*3),margins[k],black,font=font_sm)
+    textwidth, textheight = draw_1.textsize(cand, font_sm)
+    draw_1.text((1920-10-70*8-10-textwidth,1080-10-25*2+25*l),cand,black,font=font_sm)    
+img_all_i.paste(img_ddhq,(0+10,0+10,80+10,80+10))
 precinct_text=str(precincts_reporting)+'/'+str(precincts)+" precincts reporting"
-textwidth, textheight = draw_1.textsize(precinct_text, font_half)
-draw_1.text((xc-textwidth/2,1080-10-textheight),precinct_text,black,font=font_half)
+textwidth, textheight = draw_1.textsize(precinct_text, font_sm)
+draw_1.text((xc-textwidth/2,1080-10-textheight),precinct_text,black,font=font_sm)
+draw_1.text((579,291),'Cobb',black,font=font_sm)
+draw_1.text((1299,741),'DeKalb',black,font=font_sm)
+draw_1.text((1259,257),'Fulton',black,font=font_sm)
 img_all_i.save(os.path.expanduser("~/Desktop/")+file_names[1])
 
 img_comp_primary_i=Image.new(mode,(1920,1080),"white")
@@ -454,28 +460,32 @@ title_2=titles[1]+', as of '+datetime.datetime.now().strftime("%I:%M%p, %B %d")
 textwidth, textheight = draw_2.textsize(title_2,font=font_sm)
 draw_2.text((xc-textwidth/2, 10+58),title_2,black,font=font_sm)
 for k,cand in enumerate(order):
-    draw_2.text((58,1080-10-25*4+25*k),cand,candidates[cand]['color'][3],font=font_half)
+    draw_2.text((58,1080-10-25*4+25*k),cand,candidates[cand]['color'][3],font=font_sm)
     if(all_votes>0):
-        draw_2.text((58+80,1080-10-25*4+25*k),'%5s' % str(100*round(float(all_votes_dict[cand])/all_votes,3))+'%',black,font=font_half)
+        draw_2.text((58+118,1080-10-25*4+25*k),'%5s' % str(100*round(float(all_votes_dict[cand])/all_votes,3))+'%',black,font=font_sm)
     else:
-        draw_2.text((58+80,1080-10-25*4+25*k),'%5s' % str(0.0)+'%',black,font=font_half)    
+        draw_2.text((58+118,1080-10-25*4+25*k),'%5s' % str(0.0)+'%',black,font=font_sm)    
     results_str='%12s' % "{:,}".format(all_votes_dict[cand])
     if(k!=0):
         results_str=results_str+'  (-%s)' % "{:,}".format(all_votes_dict[order[0]]-all_votes_dict[cand])
-    draw_2.text((58+140,1080-10-25*4+25*k),results_str,black,font=font_half)
-draw_2.text((58,1080-10-25),'Total votes',black,font=font_half)
-draw_2.text((58+140,1080-10-25),'%12s' % "{:,}".format(all_votes),black,font=font_half)
+    draw_2.text((58+178,1080-10-25*4+25*k),results_str,black,font=font_sm)
+draw_2.text((58,1080-10-25),'Total votes',black,font=font_sm)
+draw_2.text((58+178,1080-10-25),'%12s' % "{:,}".format(all_votes),black,font=font_sm)
 for l,cand in enumerate(['OSSOFF','HANDEL']):
     for k in range(8):
-        draw_2.rectangle((1920-10-50*8+50*k,1080-10-25*2+25*l,1920-10-50*8+50*(k+1),1080-10-25*2+25*(l+1)),fill=candidates[cand]['color'][k],outline=black)
+        draw_2.rectangle((1920-10-70*8+70*k,1080-10-25*2+25*l,1920-10-70*8+70*(k+1),1080-10-25*2+25*(l+1)),fill=candidates[cand]['color'][k],outline=black)
         if(l==0):
-            draw_2.text((1920-10-50*8+50*k,1080-10-25*3),margins[k],black,font=font_half)
-textwidth, textheight = draw_2.textsize('Ossoff under', font_half)
-draw_2.text((1920-10-50*8-10-textwidth,1080-10-25*2+25*0),'Ossoff over',black,font=font_half)
-draw_2.text((1920-10-50*8-10-textwidth,1080-10-25*2+25*1),'Ossoff under',black,font=font_half)   
-img_comp_primary_i.paste(img_ddhq,(0+10,0+10,48+10,48+10))
-textwidth, textheight = draw_2.textsize(precinct_text, font_half)
-draw_2.text((xc-textwidth/2,1080-10-textheight),precinct_text,black,font=font_half)
+            draw_2.text((1920-10-70*8+70*k,1080-10-25*3),margins[k],black,font=font_sm)
+textwidth, textheight = draw_2.textsize('Ossoff under', font_sm)
+draw_2.text((1920-10-70*8-10-textwidth,1080-10-25*2+25*0),'Ossoff over',black,font=font_sm)
+draw_2.text((1920-10-70*8-10-textwidth,1080-10-25*2+25*1),'Ossoff under',black,font=font_sm)   
+img_comp_primary_i.paste(img_ddhq,(0+10,0+10,80+10,80+10))
+precinct_text=str(precincts_reporting)+'/'+str(precincts)+" precincts reporting"
+textwidth, textheight = draw_2.textsize(precinct_text, font_sm)
+draw_2.text((xc-textwidth/2,1080-10-textheight),precinct_text,black,font=font_sm)
+draw_2.text((579,291),'Cobb',black,font=font_sm)
+draw_2.text((1299,741),'DeKalb',black,font=font_sm)
+draw_2.text((1259,257),'Fulton',black,font=font_sm)
 img_comp_primary_i.save(os.path.expanduser("~/Desktop/")+file_names[2])
 
 img_comp_pres_i=Image.new(mode,(1920,1080),"white")
@@ -493,28 +503,32 @@ title_3=titles[2]+', as of '+datetime.datetime.now().strftime("%I:%M%p, %B %d")
 textwidth, textheight = draw_3.textsize(title_3,font=font_sm)
 draw_3.text((xc-textwidth/2, 10+58),title_3,black,font=font_sm)
 for k,cand in enumerate(order):
-    draw_3.text((58,1080-10-25*4+25*k),cand,candidates[cand]['color'][3],font=font_half)
+    draw_3.text((58,1080-10-25*4+25*k),cand,candidates[cand]['color'][3],font=font_sm)
     if(all_votes>0):
-        draw_3.text((58+80,1080-10-25*4+25*k),'%5s' % str(100*round(float(all_votes_dict[cand])/all_votes,3))+'%',black,font=font_half)
+        draw_3.text((58+118,1080-10-25*4+25*k),'%5s' % str(100*round(float(all_votes_dict[cand])/all_votes,3))+'%',black,font=font_sm)
     else:
-        draw_3.text((58+80,1080-10-25*4+25*k),'%5s' % str(0.0)+'%',black,font=font_half)    
+        draw_3.text((58+118,1080-10-25*4+25*k),'%5s' % str(0.0)+'%',black,font=font_sm)    
     results_str='%12s' % "{:,}".format(all_votes_dict[cand])
     if(k!=0):
         results_str=results_str+'  (-%s)' % "{:,}".format(all_votes_dict[order[0]]-all_votes_dict[cand])
-    draw_3.text((58+140,1080-10-25*4+25*k),results_str,black,font=font_half)
-draw_3.text((58,1080-10-25),'Total votes',black,font=font_half)
-draw_3.text((58+140,1080-10-25),'%12s' % "{:,}".format(all_votes),black,font=font_half)
+    draw_3.text((58+178,1080-10-25*4+25*k),results_str,black,font=font_sm)
+draw_3.text((58,1080-10-25),'Total votes',black,font=font_sm)
+draw_3.text((58+178,1080-10-25),'%12s' % "{:,}".format(all_votes),black,font=font_sm)
 for l,cand in enumerate(['OSSOFF','HANDEL']):
     for k in range(8):
-        draw_3.rectangle((1920-10-50*8+50*k,1080-10-25*2+25*l,1920-10-50*8+50*(k+1),1080-10-25*2+25*(l+1)),fill=candidates[cand]['color'][k],outline=black)
+        draw_3.rectangle((1920-10-70*8+70*k,1080-10-25*2+25*l,1920-10-70*8+70*(k+1),1080-10-25*2+25*(l+1)),fill=candidates[cand]['color'][k],outline=black)
         if(l==0):
-            draw_3.text((1920-10-50*8+50*k,1080-10-25*3),margins[k],black,font=font_half)
-textwidth, textheight = draw_3.textsize('Ossoff under', font_half)
-draw_3.text((1920-10-50*8-10-textwidth,1080-10-25*2+25*0),'Ossoff over',black,font=font_half)
-draw_3.text((1920-10-50*8-10-textwidth,1080-10-25*2+25*1),'Ossoff under',black,font=font_half)   
-img_comp_pres_i.paste(img_ddhq,(0+10,0+10,48+10,48+10))
-textwidth, textheight = draw_3.textsize(precinct_text, font_half)
-draw_3.text((xc-textwidth/2,1080-10-textheight),precinct_text,black,font=font_half)
+            draw_3.text((1920-10-70*8+70*k,1080-10-25*3),margins[k],black,font=font_sm)
+textwidth, textheight = draw_3.textsize('Ossoff under', font_sm)
+draw_3.text((1920-10-70*8-10-textwidth,1080-10-25*2+25*0),'Ossoff over',black,font=font_sm)
+draw_3.text((1920-10-70*8-10-textwidth,1080-10-25*2+25*1),'Ossoff under',black,font=font_sm)   
+img_comp_pres_i.paste(img_ddhq,(0+10,0+10,80+10,80+10))
+precinct_text=str(precincts_reporting)+'/'+str(precincts)+" precincts reporting"
+textwidth, textheight = draw_1.textsize(precinct_text, font_sm)
+draw_3.text((xc-textwidth/2,1080-10-textheight),precinct_text,black,font=font_sm)
+draw_3.text((579,291),'Cobb',black,font=font_sm)
+draw_3.text((1299,741),'DeKalb',black,font=font_sm)
+draw_3.text((1259,257),'Fulton',black,font=font_sm)
 img_comp_pres_i.save(os.path.expanduser("~/Desktop/")+file_names[3])
 
 for name in file_names:
